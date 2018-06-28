@@ -7,13 +7,21 @@ import {ClientModel} from '../../models/ClientModel';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
+  totalOwed;
 clientsArray: ClientModel[];
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
     this.clientService.getClients().subscribe(
-      (data) => {this.clientsArray = data; }
+      (data) => {this.clientsArray = data;
+      this.getTotalOwed(); }
     );
   }
-
+getTotalOwed() {
+    this.totalOwed = this.clientsArray.reduce(
+      (totals, client) => {
+        return totals + client.balance;
+      }, 0
+    );
+}
 }
