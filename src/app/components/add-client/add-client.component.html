@@ -1,3 +1,52 @@
-<p>
-  add-client works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <button class="btn btn-secondary customBtn buttons" routerLink="/"
+    ><span><i class="fa fa-angle-double-left"> </i><i class="fa fa-angle-double-left"> </i> Back</span>
+      </button>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+<div class="card">
+  <div class="card card-header text-center customHeader">Add Client</div>
+  <div class="card card-body customBody">
+    <form #clientForm="ngForm"
+          (ngSubmit)="onSubmit(clientForm)">
+    <!--FirstName-->
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text"
+               id="firstName"
+               class="form-control"
+               name="firstName"
+               #clientFirstName="ngModel"
+        [(ngModel)]="firstName" minlength="3" required
+        [ngClass]="{'is-invalid': clientFirstName.errors && clientFirstName.touched}">
+        <div [hidden]="!clientFirstName.errors?.required" class="invalid-feedback">
+          First Name Required
+        </div>
+        <div [hidden]="!clientFirstName.errors?.minlength" class="invalid-feedback">
+          Must Be Atleast 3 Characters
+        </div>
+      </div>
+    <!--Last Name-->
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text"
+               id="lastName"
+               class="form-control"
+               name="lastName"
+               #clientLastName="ngModel"
+               [(ngModel)]="lastName" minlength="4" required
+               [ngClass]="{'is-invalid': clientLastName.errors && clientLastName.touched}">
+        <div [hidden]="!clientLastName.errors?.required" class="invalid-feedback">
+          Last Name Required
+        </div>
+        <div [hidden]="!clientLastName.errors?.minlength" class="invalid-feedback">
+          Must Be Atleast 4 Characters
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

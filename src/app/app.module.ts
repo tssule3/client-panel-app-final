@@ -21,6 +21,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireStorageModule} from 'angularfire2/storage';
 import {ClientService} from './services/client.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {ClientService} from './services/client.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]
