@@ -60,6 +60,6 @@ background-color: rgba(90, 98, 104, 0);
 }
 .customCard{
   margin: 0 auto;
-  max-width: 70%;
-  min-width: 70%;
+  max-width: 600px;
+  min-width: 230px;
 }
