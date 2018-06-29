@@ -51,3 +51,15 @@ background-color: rgba(90, 98, 104, 0);
   color: #ffffff;
   font-size: 20px;
 }
+.customBack{
+  color: #ffffff;
+  font-size: 20px;
+}
+.formBtn{
+  width: 10em;
+}
+.customCard{
+  margin: 0 auto;
+  max-width: 70%;
+  min-width: 70%;
+}
