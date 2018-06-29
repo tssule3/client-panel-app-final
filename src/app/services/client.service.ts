@@ -28,4 +28,20 @@ client: Observable<ClientModel>;
   newClient(val: ClientModel) {
     this.clientsCollection.add(val);
   }
+
+  getClient(id: string): Observable<ClientModel> {
+    this.clientsDoc = this.afs.doc<ClientModel>(`clients/${id}`);
+    this.client = this.clientsDoc.snapshotChanges().pipe(
+      map(actions => {
+        if (actions.payload.exists === false) {
+          return null;
+        } else {
+          const data = actions.payload.data() as ClientModel;
+           data.id = actions.payload.id;
+           return data;
+        }
+      })
+    );
+    return this.client;
+  }
 }
