@@ -4,17 +4,25 @@
   </a>
   <ul class="navbar-nav mr-auto">
     <li>
-      <img src="assets/LOGO.png" alt="" width="250px">
+      <img src="assets/LOGO.png" alt="" width="200px">
     </li>
   </ul>
-  <button class="navbar-toggler " type="button"
-          data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler" type="button" *ngIf="prop"
+          data-toggle="collapse" data-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false"
+          aria-label="Toggle navigation" (click)="prop =!prop">
+    <span class="fa fa-angle-double-down customSpan"></span>
+  </button>
+  <button class="navbar-toggler " type="button" *ngIf="!prop"
+          data-toggle="collapse" data-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false"
+          aria-label="Toggle navigation" (click)="prop =!prop">
+    <span class="fa fa-angle-double-up customSpan"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-     
+
 
     </ul>
     <ul class="navbar-nav ml-auto">
