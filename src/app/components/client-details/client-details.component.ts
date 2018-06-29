@@ -10,7 +10,10 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./client-details.component.css']
 })
 export class ClientDetailsComponent implements OnInit {
-id: string; client: ClientModel; hasBalance = false;
+id: string;
+client: ClientModel = {id: '', firstName: '', balance: null, phone: '',
+  lastName: '', email: ''};
+hasBalance = false;
 showBalanceUpdateInput = false;
   constructor(private service: ClientService,
               private act: ActivatedRoute,
@@ -29,6 +32,7 @@ showBalanceUpdateInput = false;
           }
         }
         this.client = data;
+        console.log(this.client);
       }
     );
   }

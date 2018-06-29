@@ -1,17 +1,49 @@
-<div class="row">
-  <div class="col-md-6">
-    <button class="btn btn-secondary customBtn buttons " routerLink="/"
-    ><span><i class="fa fa-backward customBack"></i>
+  <div class="row customDiv">
+    <div class="col-md-4">
+      <button class="btn btn-secondary customBtn buttons "
+              routerLink="/"
+      ><span><i class="fa fa-backward customBack"></i>
       <i class="fa fa-bars customBack"></i>  Back</span>
-    </button>
-  </div>
-  <div class="col-md-6">
-    <div class="btn-group ">
-      <button class="btn btn-dark customBtn buttons"
-              routerLink="/client/edit/{{id}}">
-       <span><i class="fa fa-backward customBack"></i>
-      <i class="fa fa-bars customBack"></i>  Edit</span>
       </button>
     </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
+        <button class="btn btn-danger customBtns buttons1"
+                routerLink="/client/edit/{{id}}">
+       <span>Edit <i class="fa fa-bars customBack"></i>
+        <i class="fa fa-forward customBack"></i></span>
+        </button>
+    </div>
+    <div class="col-md-12 "><br>
+      <table class="table table-secondary ">
+        <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Balance</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{client.firstName}} {{client.lastName}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.phone}}</td>
+          <td>{{client.balance}}</td>
+
+          <td>
+            <button class="btn btn-danger btn-sm">
+              <i class="fa fa-remove"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+
+
