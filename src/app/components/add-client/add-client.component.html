@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row flash-message" #grayOutDiv>
   <div class="col-md-4">
     <button class="btn btn-secondary customBtn buttons " routerLink="/"
     ><span><i class="fa fa-backward customBack"></i>
@@ -106,14 +106,16 @@
 
           <div class="row">
             <div class="col-md-4">
-              <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              <input type="submit" [hidden]="setValid" value="Submit" class="btn btn-primary btn-block">
+            </div>
+            <div class="col-md-4" >
             </div>
             <div class="col-md-4">
-              <br>
-            </div>
-            <div class="col-md-4">
-              <input type="reset" value="Reset Form" class="btn btn-danger btn-block">
+              <input type="reset" [hidden]="setValid" value="Reset Form" class="btn btn-danger btn-block">
 
+            </div>
+            <div class="col-md-12">
+              <!--<flash-messages [hidden]="!setValid"></flash-messages> <br>-->
             </div>
           </div>
 
@@ -122,4 +124,3 @@
     </div>
   </div>
 </div>
-<flash-messages></flash-messages>

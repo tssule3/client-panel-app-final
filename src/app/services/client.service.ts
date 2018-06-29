@@ -24,4 +24,8 @@ client: Observable<ClientModel>;
      );
    return this.clients;
   }
+
+  newClient(val: ClientModel) {
+    this.clientsCollection.add(val);
+  }
 }
