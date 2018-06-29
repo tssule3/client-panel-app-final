@@ -47,7 +47,7 @@ background-color: rgba(90, 98, 104, 0);
 .customHeader{
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.51);
 
-  background-color: #4d00df;
+  background-color: purple;
   color: #ffffff;
   font-size: 20px;
 }
