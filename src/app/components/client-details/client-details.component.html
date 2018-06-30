@@ -54,7 +54,7 @@
                   <div class="clearfix"><br>
                     <form *ngIf="showBalanceUpdateInput"
                           (submit)="updateBalance(id)">
-                      <input type="number" name="balance"
+                      <input type="text" name="balance"
                             class="form-control" [(ngModel)]="client.balance"><br>
                       <div class="row">
                         <div class="col-md-6">
