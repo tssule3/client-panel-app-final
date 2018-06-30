@@ -42,4 +42,15 @@ showBalanceUpdateInput = false;
     this.flash.show('Balance Updated',
       {cssClass: 'alert-success', timeout: 3000});
   }
+  onDelete() {
+    if (confirm('Are You Sure To Delete ?')) {
+      this.service.deleteClient(this.client);
+      this.flash.show('Client  Removed',
+        {cssClass: 'alert-success', timeout: 3000});
+
+      setTimeout(() => {
+        this.router.navigate(['/']).then();
+      }, 2000);
+    }
+  }
 }

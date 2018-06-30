@@ -48,4 +48,8 @@ client: Observable<ClientModel>;
     this.clientsDoc = this.afs.doc(`clients/${client.id}`);
     this.clientsDoc.update(client);
   }
+  deleteClient(client: ClientModel) {
+    this.clientsDoc = this.afs.doc(`clients/${client.id}`);
+    this.clientsDoc.delete().then();
+  }
 }
