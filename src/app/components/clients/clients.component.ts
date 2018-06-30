@@ -20,7 +20,7 @@ clientsArray: ClientModel[];
 getTotalOwed() {
     this.totalOwed = this.clientsArray.reduce(
       (totals, client) => {
-        return totals + parseFloat(client.balance);
+        return totals + parseFloat(client.balance.toString());
       }, 0
     );
 }
