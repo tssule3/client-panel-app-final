@@ -35,15 +35,18 @@ disableBalanceOnAdd = true;
       setTimeout(() => {this.flash.grayOut(true); }, 2000);
       setTimeout(() => {this.setValid = false; this.flash.grayOut(false); }, 2000);
     } else {
+      this.setValid = true;
       // Add New Client
       this.service.newClient(value);
       // Show Message
+      this.flash.show('New Client Added',
+        {cssClass: 'alert-success customFlashClass', timeOut: 4000} );
       // Redirect To DashBoard
-        this.router.navigate(['/']).then(
-          () => { this.flash.show('New Client Added',
-            {cssClass: 'alert-success customFlashClass', timeOut: 4000} );
-          }
-        );
+        setTimeout(() => {
+          this.router.navigate(['/']).then(
+            () => {}
+          );
+        } , 1000 );
     }
   }
 }

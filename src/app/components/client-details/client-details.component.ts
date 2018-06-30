@@ -36,5 +36,10 @@ showBalanceUpdateInput = false;
       }
     );
   }
-
+  updateBal() {
+    console.log(this.client);
+    this.service.updateClient(this.client);
+    this.flash.show('Balance Updated',
+      {cssClass: 'alert-success', timeout: 3000});
+  }
 }

@@ -44,4 +44,8 @@ client: Observable<ClientModel>;
     );
     return this.client;
   }
+  updateClient(client: ClientModel) {
+    this.clientsDoc = this.afs.doc(`clients/${client.id}`);
+    this.clientsDoc.update(client);
+  }
 }
