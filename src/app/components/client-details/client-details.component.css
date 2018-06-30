@@ -8,6 +8,10 @@
 }
 .customBtns{
   background-color: purple;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.deleteBtn{
   width: 10em;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0,0,0,0.19);
 
@@ -49,39 +53,17 @@
 }
 
 /*buttons1*/
-.buttons1 {
-  display: inline-block;
-  border-radius: 4px;
-  border: none;
-  text-align: center;
-  transition: all 0.5s;
-  cursor: pointer;
+.updateBtn{
+  border: 0;
+  width: 10em;
+  background-color: cornflowerblue;
 }
 
-.buttons1 span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+.card-body{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
-.buttons1 span:after {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: -20px;
-  transition: 0.5s;
-}
-
-.buttons1:hover span {
-  padding-left: 80px;
-}
-
-.buttons1:hover span:after {
-  opacity: 1;
-  left: 0;
-}
-.customDiv{
+.customRow{
   margin: 0 auto;
-  width: 600px;
+  width: 900px;
 }
+
