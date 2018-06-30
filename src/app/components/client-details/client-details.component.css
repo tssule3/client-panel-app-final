@@ -67,3 +67,7 @@
   width: 900px;
 }
 
+.pencilBtn{
+  border: 0;
+  background-color: cornflowerblue;
+}

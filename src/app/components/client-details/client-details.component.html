@@ -39,7 +39,33 @@
           </div>
           <div class="col-md-6">
             <div class="card card-body">
-              <p>Balance: {{client.balance}}</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>Balance: <span [class.text-danger]="hasBalance"
+                                    [class.text-success]="!hasBalance">
+                {{client.balance | currency: 'INR'}}</span>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-secondary btn-sm pencilBtn" (click)="showBalanceUpdateInput = !showBalanceUpdateInput">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                  <div class="clearfix"><br>
+                    <form *ngIf="showBalanceUpdateInput"
+                          (submit)="updateBalance(id)">
+                      <input type="text" name="balance"
+                            class="form-control" [(ngModel)]="client.balance"><br>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button class="btn btn-primary btn-block">Update</button>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
