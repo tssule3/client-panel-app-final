@@ -10,31 +10,3 @@
   color: #000000;
   font-size: 30px;
 }
-.myAnimation{
-  position: relative;
-  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
-  animation-name: example;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-}
-/* Standard syntax */
-@keyframes example {
-  0%   {color: rgb(172, 83, 223); left:0px; top:0px;}
-  25%  {color: blue;}
-  50%  {color: #000000; left:40px; top:0px;}
-  75% {color: #f21900
-  }
-  100% {color: #fcfff2; left:0px; top:0px;}
-}
-.customH1{
-  margin-top: 12px;
-  font-size: 20px;
-  font-style: italic;
-}
-.customSpans{
-  font-style: normal;
-  font-family: "Calibri";
-  font-size: 25px;
-}
