@@ -14,6 +14,7 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {AuthGuardService} from './guards/auth.guard.service';
+import {FlashMessagesModule} from 'angular2-flash-messages';
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FlashMessagesModule.forRoot()
 
   ],
   declarations: [],

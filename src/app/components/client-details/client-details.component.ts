@@ -41,13 +41,13 @@ showBalanceUpdateInput = false;
   updateBalance() {
     if (typeof(this.client.balance) !== 'number' || this.client.balance < 0 ) {
       this.flash.show('Balance Should Not Be empty or negative or unknown',
-        {cssClass: 'alert-danger', timeout: 3000});
+        {cssClass: 'alert-secondary', timeout: 3000});
       console.log('not possible');
       this.client.balance = this.tempBal;
     } else {
       this.service.updateClient(this.client);
       this.flash.show('Balance Updated',
-        {cssClass: 'alert-success', timeout: 3000});
+        {cssClass: 'alert-warning', timeout: 3000});
     }
   }
   updateBal() {
@@ -60,7 +60,7 @@ showBalanceUpdateInput = false;
     if (confirm('Are You Sure To Delete ?')) {
       this.service.deleteClient(this.client);
       this.flash.show('Client  Removed',
-        {cssClass: 'alert-success', timeout: 3000});
+        {cssClass: 'alert-danger', timeout: 3000});
 
       setTimeout(() => {
         this.router.navigate(['/']).then();

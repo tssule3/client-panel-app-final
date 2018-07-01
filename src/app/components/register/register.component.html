@@ -1,3 +1,42 @@
-<p>
-  register works!
-</p>
+<flash-messages></flash-messages>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body customBody">
+      <h1 class="text-center pb-4 pt-3"><i class="fa fa-lock text-primary"></i>
+        <span class="text-warning"> Client</span>
+        Registration</h1>
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            name="email"
+            #clientEmail="ngModel"
+            [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
+            [(ngModel)]="email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            required
+          >
+
+          <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
+            Email required
+          </div>
+
+          <div [hidden]="!clientEmail.errors?.pattern" class="invalid-feedback">
+            Email is not valid
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control"
+                 [(ngModel)]="password" required>
+        </div>
+        <input type="submit" value="Register" class="btn btn-dark btn-block"
+
+        >
+      </form>
+    </div>
+  </div>
+</div>

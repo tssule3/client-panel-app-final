@@ -26,8 +26,11 @@ showRegister;
   }
   onLogOutClick() {
   this.service.logOut();
-  this.isLoggedIn = true;
-  this.router.navigate(['/login']).then();
+    this.flash.show('Logged Out', {cssClass: 'alert-secondary', timeout: 3000 } );
+    this.isLoggedIn = true;
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 2000);
   }
 
 }

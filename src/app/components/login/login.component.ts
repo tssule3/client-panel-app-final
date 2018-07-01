@@ -18,7 +18,6 @@ password: string;
   ngOnInit() {
     this.authService.getAuth().subscribe(
       auth => {if (auth) {
-        this.flash.show('Already Logged In!', {cssClass: 'alert-secondary', timeout: 1000});
         setTimeout(() => {
           this.router.navigate(['/']).then(
             () => {
@@ -35,7 +34,9 @@ password: string;
     this.authService.login(this.email, this.password).then(
       res => {
         this.flash.show('Logged In', {cssClass: 'alert-success', timeout: 4000});
-        this.router.navigate(['/']);
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 1000);
       }
     ) .catch(
       err => {

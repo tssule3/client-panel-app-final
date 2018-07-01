@@ -18,8 +18,7 @@
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-
-
+      <flash-messages></flash-messages>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li *ngIf="!isLoggedIn" class="nav-item">
@@ -35,7 +34,7 @@
         <a class="navbar-brand customFont" routerLink="/settings">Settings</a>
       </li>
       <li *ngIf="isLoggedIn" class="nav-item">
-        <a class="navbar-brand customFont" href="#" (click)="onLogOutClick()">Logout</a>
+        <a class="navbar-brand customFont" routerLink="" (click)="onLogOutClick()">Logout</a>
       </li>
     </ul>
   </div>
