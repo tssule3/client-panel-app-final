@@ -21,12 +21,12 @@
 }
 /* Standard syntax */
 @keyframes example {
-
-  0%   {color: rgba(0, 0, 0, 0.56); left:0px; top:0px;}
+  0%   {color: rgb(172, 83, 223); left:0px; top:0px;}
   25%  {color: blue;}
-  50%  {color: #acff27; left:150px; top:0px;}
-  75% {color: #6610f2}
-  100% {color: #ff822c; left:0px; top:0px;}
+  50%  {color: #000000; left:80px; top:0px;}
+  75% {color: #f21900
+  }
+  100% {color: #fcfff2; left:0px; top:0px;}
 }
 .customH1{
   margin-top: 12px;
