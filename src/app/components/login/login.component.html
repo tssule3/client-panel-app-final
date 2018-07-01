@@ -12,7 +12,7 @@
           <input
             type="text"
             id="email"
-            class="form-control"
+            class="form-control customBody"
             name="email"
             #clientEmail="ngModel"
             [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
@@ -31,11 +31,11 @@
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control"
+          <input type="password" id="password" name="password" class="form-control customBody"
                  [(ngModel)]="password" required>
         </div>
-        <input type="submit" value="Log In" class="btn btn-primary btn-block"
-
+        <br>
+        <input type="submit" value="Log In" class="btn btn-success btn-block customBody"
         >
       </form>
     </div>

@@ -2,8 +2,8 @@
 <div class="row">
   <div class="col-md-6 mx-auto">
     <div class="card card-body customBody">
-      <h1 class="text-center pb-4 pt-3"><i class="fa fa-lock text-primary"></i>
-        <span class="text-warning"> Client</span>
+      <h1 class="text-center pb-4 pt-3"><i class="fa fa-lock text-success"></i>
+        <span class="text-primary"> Client</span>
         Registration</h1>
       <form (submit)="onSubmit()">
         <div class="form-group">
@@ -11,7 +11,7 @@
           <input
             type="text"
             id="email"
-            class="form-control"
+            class="form-control customBody"
             name="email"
             #clientEmail="ngModel"
             [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
@@ -30,10 +30,11 @@
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control"
+          <input type="password" id="password" name="password" class="form-control customBody"
                  [(ngModel)]="password" required>
         </div>
-        <input type="submit" value="Register" class="btn btn-dark btn-block"
+        <br>
+        <input type="submit" value="Register" class="btn btn-dark btn-block customBody"
 
         >
       </form>
