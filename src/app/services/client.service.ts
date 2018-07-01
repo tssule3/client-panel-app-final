@@ -46,10 +46,12 @@ client: Observable<ClientModel>;
   }
   updateClient(client: ClientModel) {
     this.clientsDoc = this.afs.doc(`clients/${client.id}`);
-    this.clientsDoc.update(client);
+    this.clientsDoc.update(client).then();
   }
   deleteClient(client: ClientModel) {
     this.clientsDoc = this.afs.doc(`clients/${client.id}`);
-    this.clientsDoc.delete().then();
+    this.clientsDoc.delete().then(
+      console.log('Deleted ')
+    );
   }
 }
