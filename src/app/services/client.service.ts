@@ -51,7 +51,6 @@ client: Observable<ClientModel>;
   deleteClient(client: ClientModel) {
     this.clientsDoc = this.afs.doc(`clients/${client.id}`);
     this.clientsDoc.delete().then(
-      console.log('Deleted ')
     );
   }
 }
