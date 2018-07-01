@@ -13,14 +13,15 @@ import {SettingsComponent} from './components/settings/settings.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {AuthGuardService} from './guards/auth.guard.service';
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: '', component: DashboardComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'client/add', component: AddClientComponent},
-  {path: 'client/edit/:id', component: EditClientComponent},
-  {path: 'client/:id', component: ClientDetailsComponent},
-  {path: 'settings', component: SettingsComponent},
+  {path: 'client/add', component: AddClientComponent, canActivate: [AuthGuardService]},
+  {path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthGuardService]},
+  {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuardService]},
+  {path: 'settings', component: SettingsComponent, canActivate: [AuthGuardService]},
   {path: '**', component: NotFoundComponent},
 ];
 @NgModule({
@@ -30,6 +31,7 @@ const routes: Routes = [
 
   ],
   declarations: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule { }

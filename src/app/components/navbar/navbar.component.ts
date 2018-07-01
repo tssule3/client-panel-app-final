@@ -21,11 +21,13 @@ showRegister;
       auth => {if (auth) {
         this.isLoggedIn = true;
         this.loggedInUser = auth.email;
-      } else { this.isLoggedIn = false;}}
+      } else { this.isLoggedIn = false; }}
     );
   }
   onLogOutClick() {
   this.service.logOut();
+  this.isLoggedIn = true;
+  this.router.navigate(['/login']).then();
   }
 
 }
