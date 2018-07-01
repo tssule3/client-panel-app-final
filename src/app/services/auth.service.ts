@@ -23,4 +23,8 @@ export class AuthService {
       auth => auth
     );
   }
+  logOut() {
+    this.auth.auth.signOut().then(
+    );
+  }
 }

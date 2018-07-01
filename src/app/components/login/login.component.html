@@ -9,7 +9,25 @@
       <form (submit)="onSubmit()">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" class="form-control" [(ngModel)]="email" required>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            name="email"
+            #clientEmail="ngModel"
+            [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
+            [(ngModel)]="email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            required
+          >
+
+          <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
+            Email required
+          </div>
+
+          <div [hidden]="!clientEmail.errors?.pattern" class="invalid-feedback">
+            Email is not valid
+          </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -17,6 +35,7 @@
                  [(ngModel)]="password" required>
         </div>
         <input type="submit" value="Log In" class="btn btn-primary btn-block"
+
         >
       </form>
     </div>

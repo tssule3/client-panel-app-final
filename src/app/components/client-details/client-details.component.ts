@@ -11,6 +11,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 })
 export class ClientDetailsComponent implements OnInit {
 id: string;
+tempBal;
 client: ClientModel = {id: '', firstName: '', balance: null, phone: '',
   lastName: '', email: ''};
 hasBalance = false;
@@ -32,9 +33,22 @@ showBalanceUpdateInput = false;
           }
         }
         this.client = data;
+        this.tempBal = this.client.balance;
         console.log(this.client);
       }
     );
+  }
+  updateBalance() {
+    if (typeof(this.client.balance) !== 'number' || this.client.balance < 0 ) {
+      this.flash.show('Balance Should Not Be empty or negative or unknown',
+        {cssClass: 'alert-danger', timeout: 3000});
+      console.log('not possible');
+      this.client.balance = this.tempBal;
+    } else {
+      this.service.updateClient(this.client);
+      this.flash.show('Balance Updated',
+        {cssClass: 'alert-success', timeout: 3000});
+    }
   }
   updateBal() {
     console.log(this.client);

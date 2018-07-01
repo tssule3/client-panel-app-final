@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  checklogin = true;
 email: string;
 password: string;
   constructor(private authService: AuthService, private flash: FlashMessagesService,
@@ -28,13 +29,19 @@ password: string;
     );
   }
   onSubmit() {
+    if ( this.email === undefined || this.password === undefined) {
+      this.flash.show('Please Fill Email & Password ', {cssClass: 'alert-danger', timeout: 4000});
+    } else {
     this.authService.login(this.email, this.password).then(
       res => {
         this.flash.show('Logged In', {cssClass: 'alert-success', timeout: 4000});
         this.router.navigate(['/']);
       }
-    ). catch(err => {
-      this.flash.show(err.message, {cssClass: 'alert-danger', timeout: 4000});
-    });
+    ) .catch(
+      err => {
+        this.flash.show('Email/Password Invalid', {cssClass: 'alert-danger', timeout: 4000});
+      }
+    );
+  }
   }
 }
