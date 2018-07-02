@@ -15,10 +15,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {AuthGuardService} from './guards/auth.guard.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
+import {RegisterGuardService} from './guards/register.guard.service';
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'register', component: RegisterComponent, canActivate: [RegisterGuardService]},
   {path: 'client/add', component: AddClientComponent, canActivate: [AuthGuardService]},
   {path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthGuardService]},
   {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuardService]},
@@ -34,6 +35,6 @@ const routes: Routes = [
   ],
   declarations: [],
   exports: [RouterModule],
-  providers: [AuthGuardService]
+  providers: [AuthGuardService, RegisterGuardService]
 })
 export class AppRoutingModule { }
