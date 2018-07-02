@@ -8,9 +8,15 @@ settings: SettingsModel = {
   disableBalanceOnAdd: true,
   disableBalanceOnEdit: true
 }
+tempData;
+showCaret;
   constructor() {
+    this.tempData = localStorage.getItem('settings');
   if (localStorage.getItem('settings') !== null) {
+    if (this.tempData.allowRegistration) {this.showCaret = true; } else {this.showCaret = false; }
     this.settings = JSON.parse(localStorage.getItem('settings'));
+  } else {
+      this.showCaret = true;
   }
   }
   getSettings (): SettingsModel {

@@ -35,8 +35,19 @@
                  [(ngModel)]="password" required>
         </div>
         <br>
-        <input type="submit" value="Log In" class="btn btn-success btn-block customBody"
-        >
+       <div class="row">
+         <div class="col-md-5">
+           <input type="submit" value="Log In" class="btn btn-success btn-block customBody customBtn"
+           >
+         </div>
+         <div class="col-md-2"><br></div>
+         <div class="col-md-5">
+           <input type="button" value="Register" *ngIf="!isLoggedIn && showRegister"
+                  routerLink="/register"
+                  class="btn btn-warning btn-block glowBtn"
+           >
+         </div>
+       </div>
       </form>
     </div>
   </div>

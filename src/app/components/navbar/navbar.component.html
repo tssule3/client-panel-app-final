@@ -21,12 +21,12 @@
       <flash-messages></flash-messages>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li *ngIf="!isLoggedIn && showRegister" class="nav-item">
-        <a class="navbar-brand customFont" routerLink="/register">Register</a>
-      </li>
-      <li *ngIf="!isLoggedIn && showRegister" class="nav-item">
-        <a class="navbar-brand customFont" routerLink="/login">Login</a>
-      </li>
+      <!--<li *ngIf="!isLoggedIn && showRegister" class="nav-item">-->
+        <!--<a class="navbar-brand customFont" routerLink="/register">Register</a>-->
+      <!--</li>-->
+      <!--<li *ngIf="!isLoggedIn && showRegister" class="nav-item">-->
+        <!--<a class="navbar-brand customFont" routerLink="/login">Login</a>-->
+      <!--</li>-->
       <li *ngIf="isLoggedIn" class="nav-item">
         <a class="navbar-brand customFont" href="#">{{loggedInUser}}</a>
       </li>
@@ -34,7 +34,7 @@
         <a class="navbar-brand customFont" routerLink="/settings">Settings</a>
       </li>
       <li *ngIf="isLoggedIn" class="nav-item customAnchor">
-        <a class="navbar-brand  customAnchor"  (click)="onLogOutClick()">Logout</a>
+        <a class="navbar-brand  customAnchor"   (click)="onLogOutClick()">Logout</a>
       </li>
     </ul>
   </div>
