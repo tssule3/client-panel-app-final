@@ -3,7 +3,6 @@ import {SettingsService} from '../../services/settings.service';
 import {SettingsModel} from '../../models/SettingsModel';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Router} from '@angular/router';
-import {settings} from 'cluster';
 
 @Component({
   selector: 'app-settings',
