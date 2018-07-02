@@ -10,6 +10,7 @@ import {SettingsService} from '../../services/settings.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  showDash;
 prop = true;
 isLoggedIn;
 loggedInUser;
@@ -18,6 +19,7 @@ showRegister;
               private flash: FlashMessagesService, private settingsService: SettingsService) { }
 
   ngOnInit() {
+    if (this.isLoggedIn || this.showRegister) {this.showDash = false; } else {this.showDash = true;}
     this.service.getAuth().subscribe(
       auth => {if (auth) {
         this.isLoggedIn = true;

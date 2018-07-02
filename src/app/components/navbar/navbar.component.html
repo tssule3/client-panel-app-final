@@ -3,13 +3,13 @@
     <img src="assets/client.png" width="50px">
   </a>
 
-  <button class="navbar-toggler" type="button" *ngIf="prop"
+  <button class="navbar-toggler" type="button" *ngIf="prop && showDash"
           data-toggle="collapse" data-target="#navbarsExample04"
           aria-controls="navbarsExample04" aria-expanded="false"
           aria-label="Toggle navigation" (click)="prop =!prop">
     <span class="fa fa-angle-double-down customSpan"></span>
   </button>
-  <button class="navbar-toggler " type="button" *ngIf="!prop"
+  <button class="navbar-toggler " type="button" *ngIf="!prop && showDash"
           data-toggle="collapse" data-target="#navbarsExample04"
           aria-controls="navbarsExample04" aria-expanded="false"
           aria-label="Toggle navigation" (click)="prop =!prop">
