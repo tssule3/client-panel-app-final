@@ -23,13 +23,15 @@
           <div class="form-group">
             <label>Disable Balance On Add </label>
             <input type="checkbox" name="disableBalanceOnAdd"
-                   [checked]="settings.disableBalanceOnAdd" (change)="settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd">
+                   [checked]="settings.disableBalanceOnAdd"
+                   (change)="settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd">
           </div>
 
           <div class="form-group">
             <label>Disable Balance On Edit&nbsp;</label>
             <input type="checkbox" name="disableBalanceOnEdit"
-                   [checked]="settings.disableBalanceOnEdit" (change)="settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit">
+                   [checked]="settings.disableBalanceOnEdit"
+                   (change)="settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit">
           </div>
 
           <input type="submit" value="Submit"

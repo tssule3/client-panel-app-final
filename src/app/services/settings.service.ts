@@ -8,8 +8,15 @@ settings: SettingsModel = {
   disableBalanceOnAdd: true,
   disableBalanceOnEdit: true
 }
-  constructor() { }
+  constructor() {
+  if (localStorage.getItem('settings') !== null) {
+    this.settings = JSON.parse(localStorage.getItem('settings'));
+  }
+  }
   getSettings (): SettingsModel {
   return this.settings;
+  }
+  changeSettings(setting: SettingsModel) {
+    localStorage.setItem('settings', JSON.stringify(setting));
   }
 }

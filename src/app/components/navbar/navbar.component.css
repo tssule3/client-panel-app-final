@@ -10,3 +10,9 @@
   color: #000000;
   font-size: 30px;
 }
+.customAnchor{
+  cursor: pointer;
+}
+.customAnchor:hover{
+ color: white;
+}
